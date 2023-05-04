@@ -55,7 +55,8 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 6px;
+  align-items: center;
+  padding: 6px 10px;
   border: 1px solid black;
   border-radius: 4px;
 }
@@ -66,9 +67,18 @@ h1 {
 }
 
 .datepicker-display .icon {
-  height: 16px;
+  height: 20px;
   width: auto;
 }
+
+.datepicker-display .calendar-icon {
+  display: inline-block;
+  min-height: 20px;
+  min-width: 18px;
+  background-image: url('./media/calendar-alt.svg');
+  background-repeat: no-repeat;
+}
+
 .datepicker-display .icon path {
   fill: black;
 }
@@ -80,19 +90,37 @@ h1 {
   width: 100%;
   max-width: 300px;
   background-color: white;
+  border-radius: 10px;
+  position: relative;
 }
 
-.datepicker-dialog .arrow {
-  height: 1.5em;
-  width: auto;
+.datepicker-dialog button {
+  border: 0;
+  background-color: inherit;
+  display: inline-block;
+  position: relative;
+  min-height: 20px;
+  min-width: 18px;  
+  background-color: lightgray;
 }
 
-.datepicker-dialog .arrow path{
-  fill: lightgray;
+.datepicker-dialog button:hover {
+  background-color: blue;
 }
 
-.datepicker-dialog .arrow:hover path{
-  fill:blue;
+.datepicker-dialog #prev-month {
+  -webkit-mask: url('/media/angle-left.svg') no-repeat center/contain;
+  mask: url('/media/angle-left.svg') no-repeat center/contain;
+}
+
+.datepicker-dialog #next-month {
+  -webkit-mask: url('/media/angle-right.svg') no-repeat center/contain;
+  mask: url('/media/angle-right.svg') no-repeat center/contain;
+}
+
+.datepicker-dialog #pick-year {
+  -webkit-mask: url('/media/angle-down.svg') no-repeat center/contain;
+  mask: url('/media/angle-down.svg') no-repeat center/contain;
 }
 
 .datepicker-dialog .header {
@@ -134,7 +162,7 @@ table th, table td {
   border-radius: 8px;
 } 
 
-table .blackout-dates {
+table .blocked-date {
   color: lightgray;
   background: linear-gradient(to top left, #fff calc(50% - 1px), lightgray, #fff calc(50% + 1px) );
 }
@@ -144,7 +172,7 @@ table .selected-date {
   background-color: blue;
 }
 
-table .active-dates:hover {
+table .active-date:hover {
   background-color: lightgray;
 }
 

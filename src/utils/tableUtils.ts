@@ -1,4 +1,8 @@
-import { handleCalendarDateClick } from "./main";
+import {
+  handleCalendarDateClick,
+  isBlockedDate,
+  isSelectedDate,
+} from "../main";
 
 const dayLabels = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
@@ -56,9 +60,15 @@ const buildCalendarTable = (
   // add days from current month
   for (let i = 0; i < daysInMonth; i++) {
     const cell = document.createElement("td");
-    const date = `${i + 1}`;
-    cell.textContent = date;
-    cell.className = "active-dates";
+    const dayOfMonth = `${i + 1}`;
+    cell.textContent = dayOfMonth;
+    const date = new Date(year, monthNum, i + 1);
+
+    if (isSelectedDate(date)) cell.className = "selected-date";
+    else if (isBlockedDate(date)) cell.className = "blocked-date";
+    else cell.className = "active-date";
+
+    cell.id = `calDay-${i + 1}`;
     cell.addEventListener("click", () => handleCalendarDateClick(i + 1));
     rowCells.push(cell);
     if (rowCells.length === 7) {

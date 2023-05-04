@@ -27,9 +27,19 @@ const setCurrentYearLabel = (year: number) => {
   if (yearLabel) yearLabel.textContent = year.toString();
 };
 
+const nextAvailableDate = (blockedDates: string[], startingDate: Date) => {
+  let date = startingDate;
+  while (blockedDates.includes(date.toDateString())) {
+    date = new Date(date.setDate(date.getDate() + 1));
+    console.log(date);
+  }
+  return date;
+};
+
 export {
   monthLabels,
   setCurrentDateLabel,
   setCurrentMonthLabel,
   setCurrentYearLabel,
+  nextAvailableDate,
 };
