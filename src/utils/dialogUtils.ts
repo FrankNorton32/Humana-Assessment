@@ -9,7 +9,7 @@ const datepickerDialog = document.querySelector(
 
 export const createCalendarPopper = () =>
   createPopper(dateDisplay, datepickerDialog, {
-    placement: "bottom",
+    placement: "bottom-start",
   });
 
 export const hideShowCalendar = (showCalendar: boolean) => {

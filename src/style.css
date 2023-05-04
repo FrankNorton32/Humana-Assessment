@@ -77,10 +77,6 @@ h1 {
   fill: blue;
 }
 
-#datepicker-dialog-wrapper {
-  transform: translate3d(0px, 38px, 0px);
-}
-
 .datepicker-dialog {
   width: 100%;
   max-width: 300px;

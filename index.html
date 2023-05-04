@@ -6,7 +6,18 @@
     <link rel="icon" type="image/svg+xml" href="/media/date.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frank Norton's Date Picker</title>
-  </head>
+    <style>
+      /* Hide the page content by default */
+      html { visibility: hidden; }
+      /* Only show the page content when the page is fully loaded */
+      .loaded body { visibility: visible; }
+    </style>
+    <script>
+      // When the page is fully loaded, add the 'loaded' class to the html element
+      window.addEventListener('load', function() {
+        document.querySelector('html').classList.add('loaded');
+      });
+    </script>  </head>
   <body id="appBody">
     <h1>This picks dates. Not plums. </h1>
     <div class="datepicker-wrapper">
