@@ -102,5 +102,4 @@ setCurrentMonthLabel(currentMonth);
 setCurrentYearLabel(currentYear);
 buildYearSelector(currentYear);
 buildCalendarTable(currentMonth, currentYear, calendarTable);
-createCalendarPopper();
 hideShowCalendar(showCalendar);

@@ -14,5 +14,5 @@ export const createCalendarPopper = () =>
 
 export const hideShowCalendar = (showCalendar: boolean) => {
   const calendar = document.getElementById("datepicker-dialog-wrapper");
-  if (calendar) calendar.style.display = showCalendar ? "inline" : "none";
+  if (calendar) calendar.style.display = showCalendar ? "inline-block" : "none";
 };
