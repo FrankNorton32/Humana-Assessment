@@ -7,6 +7,7 @@ import {
   setCurrentYearLabel,
 } from "./utils/dateUtils";
 import { createCalendarPopper, hideShowCalendar } from "./utils/dialogUtils";
+import { buildYearSelector } from "./components/yearPicker";
 
 const today = new Date();
 let currentMonth = today.getMonth();
@@ -96,10 +97,10 @@ document.getElementById("next-month")?.addEventListener("click", () => {
   buildCalendarTable(currentMonth, currentYear, calendarTable);
 });
 
-// datePickerDisplay();
 setCurrentDateLabel(selectedDate);
 setCurrentMonthLabel(currentMonth);
 setCurrentYearLabel(currentYear);
+buildYearSelector(currentYear);
 buildCalendarTable(currentMonth, currentYear, calendarTable);
 createCalendarPopper();
 hideShowCalendar(showCalendar);

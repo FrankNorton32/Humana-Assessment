@@ -9,15 +9,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -86,6 +77,10 @@ h1 {
   fill: blue;
 }
 
+#datepicker-dialog-wrapper {
+  transform: translate3d(0px, 38px, 0px);
+}
+
 .datepicker-dialog {
   width: 100%;
   max-width: 300px;
@@ -94,7 +89,7 @@ h1 {
   position: relative;
 }
 
-.datepicker-dialog button {
+.datepicker-dialog button, .datepicker-dialog select {
   border: 0;
   background-color: inherit;
   display: inline-block;
@@ -118,7 +113,8 @@ h1 {
   mask: url('/media/angle-right.svg') no-repeat center/contain;
 }
 
-.datepicker-dialog #pick-year {
+.datepicker-dialog #year-selector-button {
+  width: 20px;
   -webkit-mask: url('/media/angle-down.svg') no-repeat center/contain;
   mask: url('/media/angle-down.svg') no-repeat center/contain;
 }
@@ -175,6 +171,34 @@ table .selected-date {
 table .active-date:hover {
   background-color: lightgray;
 }
+
+#year-selector-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid grey;
+  font-size: 16px;
+}
+
+#year-selector-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#year-selector-menu li:hover {
+  background-color: lightgrey;
+}
+
+#year-selector-menu.active #year-selector-menu {
+  display: block;
+}
+
 
 
 

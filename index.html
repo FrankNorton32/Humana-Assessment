@@ -2,18 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="/media/date.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frank Norton's Date Picker</title>
   </head>
-  <body>
+  <body id="appBody">
     <h1>This picks dates. Not plums. </h1>
     <div class="datepicker-wrapper">
       <div class="datepicker-display" id="active-date-wrapper" type="button">
-        <h4 id="current-date"></h4>     
-        <div class="calendar-icon"></div>     
+        <h4 id="current-date"></h4>
+        <div class="calendar-icon"></div>
       </div>
-
+  
       <div class="datepicker-dialog" id="datepicker-dialog-wrapper">
         <div class="header">
           <div class="month-picker">
@@ -23,13 +24,16 @@
           </div>
           <div class="year-picker">
             <h5 id="current-year"></h5>
-            <button role="button" id="pick-year" title="pick-year"></button>
+            <button role="button" id="year-selector-button" title="year-selector"></button>
+            <ul id="year-selector-menu"></ul>
           </div>
         </div>
-
+  
         <table id="calendar-table" role="grid"></table>
       </div>
+      <div id="arrow" data-popper-arrow></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
+  
 </html>

@@ -6,7 +6,7 @@ import {
 
 const dayLabels = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
-const buildRowAndAppend = (
+export const buildRowAndAppend = (
   cells: HTMLTableCellElement[],
   table: HTMLTableElement,
   rowAttributes?: {
@@ -23,7 +23,7 @@ const buildRowAndAppend = (
   table.appendChild(row);
 };
 
-const clearTableRows = (table: HTMLTableElement) => {
+export const clearTableRows = (table: HTMLTableElement) => {
   while (table.rows.length > 0) {
     table.deleteRow(0);
   }
@@ -39,7 +39,7 @@ const buildHeaderRowAndAppend = (table: HTMLTableElement) => {
   buildRowAndAppend(headerCells, table, { className: "calendar-header" });
 };
 
-const buildCalendarTable = (
+export const buildCalendarTable = (
   monthNum: number,
   year: number,
   table: HTMLTableElement
@@ -79,11 +79,4 @@ const buildCalendarTable = (
 
   // clean up final week
   if (rowCells.length) buildRowAndAppend(rowCells, table);
-};
-
-export {
-  buildRowAndAppend,
-  clearTableRows,
-  buildHeaderRowAndAppend,
-  buildCalendarTable,
 };
