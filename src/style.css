@@ -191,7 +191,7 @@ table .active-date:hover {
   background-color: lightgrey;
 }
 
-#year-selector-menu.active #year-selector-menu {
+#year-selector-menu.active {
   display: block;
 }
 
